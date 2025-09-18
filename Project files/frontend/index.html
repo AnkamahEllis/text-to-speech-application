@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Serverless Text-to-Speech (AWS)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="card header">
+      <h1>Text → Speech App</h1>
+      <p class="muted">Type text and get a natural-sounding MP3 of your choice</p>
+    </header>
+
+    <section class="card form">
+      <form id="synthForm">
+        <label for="text">Text (max ~ a few thousand characters)</label>
+        <textarea id="text" rows="6" placeholder="Type something..."></textarea>
+
+        <div class="row">
+          <div class="col">
+            <label for="voice">Voice</label>
+            <select id="voice">
+              <option>Joanna</option>
+              <option>Matthew</option>
+              <option>Kimberly</option>
+              <option>Justin</option>
+              <option>Emma</option>
+            </select>
+          </div>
+          <div class="col align-end">
+            <button id="submitBtn" class="btn">Convert to Speech</button>
+          </div>
+        </div>
+      </form>
+
+      <div id="status" class="muted">Ready</div>
+    </section>
+
+    <section class="card results">
+    <h3>Result</h3>
+    <audio id="player" controls></audio>
+    <!-- NEW download button -->
+    <button id="downloadBtn" class="btn" style="display:none; margin-top:10px;">
+        Download Audio
+    </button>
+    </section>
+
+
+    <footer class="card footer muted">
+      <small>Developed by AB3 Cloud Technology LTD</small>
+    </footer>
+  </main>
+
+  <script>
+    // Set this to the invoke URL you get from API Gateway (replace below)
+    window.API_BASE = "https://nfjs64i9o6.execute-api.us-east-1.amazonaws.com/"; 
+  </script>
+  <script src="app.js"></script>
+</body>
+</html>

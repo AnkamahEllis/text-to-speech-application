@@ -1,0 +1,71 @@
+:root{
+  --bg:#fdc134;
+  --card:#ffffff;
+  --accent:#0b72ff;
+  --muted:#6b7280;
+  --radius:12px;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:#0f1724;
+  -webkit-font-smoothing:antialiased;
+}
+.container{
+  max-width:920px;
+  margin:28px auto;
+  padding:16px;
+}
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:18px;
+  box-shadow:0 6px 18px rgba(15,23,36,0.06);
+  margin-bottom:14px;
+}
+.header h1{margin:0 0 6px 0}
+.muted{color:var(--muted);font-size:0.95rem}
+.form label{display:block;margin-bottom:6px;font-weight:600}
+textarea{
+  width:100%;
+  padding:12px;
+  font-size:1rem;
+  border-radius:8px;
+  border:1px solid #e6eef8;
+  resize:vertical;
+  min-height:120px;
+}
+.row{display:flex;gap:12px;align-items:flex-end;margin-top:12px}
+.col{flex:1}
+.col.align-end{display:flex;justify-content:flex-end;align-items:center}
+select, button{
+  padding:10px 14px;border-radius:8px;border:1px solid #e6eef8;font-size:1rem;
+}
+.btn{
+  background:var(--accent);
+  color:white;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+
+  #downloadBtn {
+  background-color: #58e158;
+  }
+  #downloadBtn:hover {
+    background-color: #3ad712;
+  }
+
+}
+.btn:disabled{opacity:0.6;cursor:not-allowed}
+.results audio{width:100%;margin-top:8px}
+.history{list-style:none;padding:0;margin-top:8px}
+.history li{padding:8px;border-radius:8px;background:#f3f7ff;margin-bottom:8px}
+.footer{text-align:center;font-size:0.9rem}
+
+@media (max-width:640px){
+  .row{flex-direction:column;align-items:stretch}
+  .col.align-end{justify-content:flex-start}
+}
+
