@@ -1,5 +1,7 @@
 # Text-to-Speech on AWS (Terraform Project)
 
+![homepage](ProjectFiles/homepage.png)
+
 This project provisions a **Text-to-Speech web app** on AWS using Terraform.  
 It deploys:
 - An **S3 bucket** (for static frontend + audio files storage)
