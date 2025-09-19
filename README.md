@@ -29,18 +29,40 @@ It deploys:
 - S3 lifecycle is add to delete audio after 1 day to optimise cost
 
 ---
-## Directories
-#### Terraform
-Contains two sub-directories:
-- lambda - the lambda handler python code and lambda zip files can be found here
-- modules - the api, lambda, and s3 terraform provisioning codes are found here
+## Project Structure
+```bash
+text-to-speech-application/
+├── Terraform/
+│   ├── main.tf
+│   ├── variables.tf
+│   ├── outputs.tf
+│   ├── modules/
+│   │   ├── s3/
+│   │   │   ├── main.tf
+│   │   │   ├── variables.tf
+│   │   │   └── outputs.tf
+│   │   ├── lambda/
+│   │   │   ├── main.tf
+│   │   │   ├── variables.tf
+│   │   │   └── outputs.tf
+│   │   └── api/
+│   │       ├── main.tf
+│   │       ├── variables.tf
+│   │       └── outputs.tf
+│   └── lambda/       
+│        └── handler.py
+├── ProjectFiles/
+│   ├── frontend/
+│   │   ├── index.html
+│   │   ├── styles.css
+│   │   └── app.js
+│   ├── architecture-diagram.png
+│   └── Testing session.mp4
+├── .gitignore
+├── README.md
 
-The main.tf file contains the terraform version, provider (AWS), default region, and references to the api, lambda, and s3 modules
 
-#### Project Files
-- A frontend sub-directory which contains the index.html, styles.css and app.js files for the static hosting
-- Testing video walkthrough
-
+```
 ---
 ## Project Walkthrough
 1. cd into the Terraform folder
@@ -73,3 +95,8 @@ terraform apply "tfplan"
 7. upload the all files in the frontend directory in the s3-bucket. Create a folder "audio" in the same bucket for storing the generated audio files
 
 8. copy and paste the s3 website_endpoint from the terraform apply output into a web browser and enjoy testing it
+
+---
+## Challenges Faced
+- Provisioning of the Lambda function and pointing the handler to the right file (file mapping)
+- API integration (CORS)
