@@ -21,6 +21,7 @@ It deploys:
 ---
 
 ## Architecture Diagram Walkthrough
+![architecture](Architecture-diagram.png)
 - Host the frontend (html + css + js) on S3 with enabled static hosting
 - A user makes a call to convert text to speech and the call is sent to API Gateway. 
 - The API Gateway triggers a lambda function. The function sends the text (user input) to AWS Polly for synthesis and stores the audio file in a directory in the same S3 bucket
