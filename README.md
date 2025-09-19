@@ -114,7 +114,10 @@ aws s3 ls s3://ab3-text-to-speech-tf/
 ```bash
 http://ab3-text-to-speech-tf.s3.us-east-1.amazonaws.com
 ```
-
+9. Clean up
+```bash
+terraform destroy
+```
 ---
 ## Challenges Faced
 - Provisioning of the Lambda function and pointing the handler to the right file (file mapping)
